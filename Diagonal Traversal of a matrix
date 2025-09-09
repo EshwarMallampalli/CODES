@@ -1,0 +1,47 @@
+class Solution { // JAVA // comments coming soon
+    public int[] findDiagonalOrder(int[][] mat) {
+        boolean click = false;
+        int r = 0, c = 0;
+        ArrayList<ArrayList<Integer>> arr = new ArrayList<ArrayList<Integer>>();
+        while (r != mat.length && c != mat[0].length) {
+            boolean dir = switcher(click); // taking 'true' as up and 'false' as down
+            ArrayList<Integer> el = new ArrayList<Integer>();    
+            el = traverse(mat, r, c, dir);
+            arr.add(el);
+            
+        }
+    }
+
+    public static boolean switcher(boolean t){
+        boolean y = !t;
+        return y; 
+    }
+
+    public static int traverse(int[][] mat,int i ,int j,boolean b){
+        if(b){
+            public ArrayList<Integer> upTraverse(int[][] mat,int i,int j){
+                //Upward traversal
+                ArrayList<Integer> uA = new ArrayList<Integer>();
+                while(i>=0 || j<mat[0].length){
+                    uA.add(mat[i][j]);
+                    i = i-1;
+                    j = j+1;
+                }
+                return uA;
+            }
+        }
+        else{
+            public ArrayList<Integer> downTraverse(int[][] mat,int i,int j){
+                //Downward traversal
+                ArrayList<Integer> dA = new ArrayList<Integer>();
+                while(i<mat.length || j>=0){
+                    dA.add(mat[i][j]);
+                    i = i+1;
+                    j = j-1;
+                }
+                return dA;
+            }
+        }
+    }
+
+}
