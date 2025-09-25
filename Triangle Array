@@ -1,0 +1,27 @@
+/*Find the minimum path sum from top to the bottom of the list of lists  triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]
+   2
+  3 4
+ 6 5 7
+4 1 8 3
+Solution = 2 + 3 + 5 + 1 = 11
+*/
+class Solution {
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int m = triangle.size();
+        int min_sum = 0;
+        for(int k = 0;k<m;k++){
+            min_sum = min_num(triangle.get(k)) + min_sum; 
+        }
+        return min_sum; 
+    }
+    int min_num(List<Integer> arr){
+            int n = arr.size();
+            int min = arr.get(0);
+            for(int i = 1;i<n;i++){
+                if(arr.get(i) < min){
+                    min = arr.get(i);
+                } 
+            }
+            return min;
+        }
+}
